@@ -8,18 +8,17 @@
 #include <cmath>
 
 struct Vector{
-    double angle;
-    double magnitude;
     double cx;
     double cy;
     
-    Vector(double a, double m) : angle(a), magnitude(m), cx(std::cos(a) * m), cy(std::sin(a) * m) {}
+    Vector(double cx, double cy) : cx(cx), cy(cy) {}
     
-    void add_vector(Vector vector);
+    Vector operator=(Vector);
     
-    Vector& operator=(Vector&);
+    Vector operator/(double);
+    Vector operator*(double);
     
-    Vector& operator/(double);
+    Vector operator+(Vector);
 };
 
 struct Position {
