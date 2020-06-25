@@ -16,13 +16,28 @@ class Atom {
     Vector velocity;
 
 public:
-    Atom(double x, double y, double q, double m) : position(x, y), Q(q), m(m), velocity(0,0){}
+    Atom(double x, double y, double q, double m) : position(x, y), Q(q), m(m), velocity(0,0,0){}
     
     void move();
+    
+    double get_Q(){
+        return Q;
+    }
+    
+    double get_m(){
+        return this->m;
+    }
+    
+    Vector get_v(){
+        return velocity;
+    }
     
     void print(std::ofstream& out);
     
     void push_force(Vector force);
+    
+    void accelerate(Vector);
+    
 };
 
 

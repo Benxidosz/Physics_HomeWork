@@ -10,13 +10,16 @@
 struct Vector{
     double cx;
     double cy;
+    double cz;
     
-    Vector(double cx, double cy) : cx(cx), cy(cy) {}
+    Vector(double cx, double cy, double cz) : cx(cx), cy(cy), cz(cz) {}
     
     Vector operator=(Vector);
     
     Vector operator/(double);
+    
     Vector operator*(double);
+    Vector CrossMultypli(Vector);
     
     Vector operator+(Vector);
 };

@@ -13,5 +13,10 @@ void Atom::print(std::ofstream& out) {
 }
 
 void Atom::push_force(Vector force) {
-    this->velocity = this->velocity + (force/( 2 * this->m )) * std::pow(0.001,2);
+    this->velocity = this->velocity + (force/(this->m  * 2));
 }
+
+void Atom::accelerate(Vector a) {
+    this->velocity = this->velocity + (a/2);
+}
+
