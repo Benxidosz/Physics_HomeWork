@@ -15,7 +15,7 @@ class Simulation {
     size_t height;
 
 public:
-    Simulation(size_t w, size_t h, double g, double b, double q, double  m) : width(w), height(h), g(0, g,0), B(0,0, b), atom(w/2, h/2, q, m) {}
+    Simulation(size_t w, size_t h, double g, double b, double q, double  m) : width(w), height(h), g(0, g ,0), B(0,0, b), atom(w, h/2, q, m) {}
     
     void simulate(std::ofstream& out);
 };

@@ -28,7 +28,7 @@ public:
         return this->m;
     }
     
-    Vector get_v(){
+    Vector& get_v(){
         return velocity;
     }
     

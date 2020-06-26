@@ -16,10 +16,12 @@ void Simulation::simulate(std::ofstream &out) {
     out << "<svg height='" << height << "' width='" << width << "'>\n";
     background(out, this->width, this->height);
     atom.print(out);
-    for(int i = 0; i < 1000; ++i){
-        Vector F = this->atom.get_v().CrossMultypli(this->B) * this->atom.get_Q() ;
-        atom.accelerate(this->g);
-        atom.push_force(F);
+    for(int i = 0; i < 10000; ++i){
+        Vector F = (this->atom.get_v() * this->atom.get_Q()).CrossMultypli(this->B) ;
+        Vector G = this->g * this->atom.get_m();
+        atom.push_force(G + F);
+        std::cout << "V" << this->atom.get_v();
+        std::cout << "F" << F;
         atom.move();
         atom.print(out);
     }

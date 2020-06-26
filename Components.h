@@ -6,6 +6,7 @@
 #define PHYSICS_HOMEWORK_COMPONENTS_H
 
 #include <cmath>
+#include <iostream>
 
 struct Vector{
     double cx;
@@ -23,6 +24,8 @@ struct Vector{
     
     Vector operator+(Vector);
 };
+
+std::ostream& operator <<(std::ostream&, Vector&);
 
 struct Position {
     double x;

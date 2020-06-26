@@ -31,5 +31,10 @@ Vector Vector::operator*(double p) {
 }
 
 Vector Vector::CrossMultypli(Vector other) {
-    return Vector(this->cy * other.cz - this->cz*other.cy, this->cx * other.cz - this->cz * other.cx, this->cx * other.cy - this->cy * other.cx);
+    return Vector((this->cy * other.cz) - (this->cz * other.cy), (this->cx * other.cz) - (this->cz * other.cx), (this->cx * other.cy) - (this->cy * other.cx));
+}
+
+std::ostream& operator<<(std::ostream& os, Vector& vector) {
+    os << "(" << vector.cx << ", " << vector.cy << ", " << vector.cz << ")\n";
+    return os;
 }
